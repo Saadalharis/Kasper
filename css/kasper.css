@@ -293,6 +293,7 @@ ul {
   }
   @media (max-width: 767px) {
     .services .srv-box  {
+      display: flex;
       flex-direction: column;
       text-align: center;
       margin-bottom: 40px;
@@ -491,7 +492,6 @@ ul {
     text-transform: uppercase;
     padding: 10px 20px;
   }
-  /* start my media  */
   @media(max-width: 767px) {
     .video .text {
       padding: 20px;
@@ -503,8 +503,7 @@ ul {
       padding: 11px 15px;
     }
   }
-  /* end my media  */
-  /* end video */
+    /* end video */
   /* start about */
   .about {
     padding-top: var(--section-padding);
@@ -519,7 +518,7 @@ ul {
   }
   @media (max-width: 767px) {
     .about img {
-      margin-bottom: 60px;
+      margin-top: 60px;
       bottom: -60px;
     }
   }
@@ -737,7 +736,12 @@ ul {
     grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap: 25px;
   }
-
+  @media ((min-width: 768px) and (max-width:1199px)){
+    .pricing .content {
+      grid-template-columns: repeat(2,1fr);
+      gap: 40px;
+    }
+  }
   .pricing .content .plan {
     background-color: #fcfcfc;
     text-align: center;
@@ -775,8 +779,6 @@ ul {
   }
   .pricing .content .plan ul li {
     padding: 20px;
-  }
-  .pricing .content .plan ul li:not(:last-child) {
     position: relative;
   }
   .pricing .content .plan ul li:not(:last-child)::after {
@@ -796,6 +798,7 @@ ul {
     margin: 20px auto;
     width: fit-content;
     text-decoration: none;
+    pointer-events: none;
   }
   .pricing .contact-text {
     font-size: 20px;
@@ -848,7 +851,7 @@ ul {
   }
   .subscribe form input[type="email"] {
     border: 1px solid white;
-    background: none;
+    background-color: #74747d;
     padding: 20px 20px 20px 60px;
     caret-color: var(--main-color);
     width: calc(100% - 130px);
@@ -862,6 +865,7 @@ ul {
     border: 1px solid white;
     text-transform: uppercase;
     border-left: none;
+    pointer-events: none;
   }
   .subscribe form i {
     position: absolute;
@@ -924,8 +928,8 @@ ul {
     display: flex;
     margin-left: auto ;
     text-transform: uppercase;
-    cursor: pointer;
   }
+
   .contact .content .info {
     flex-basis: 25%;
   }
@@ -933,6 +937,9 @@ ul {
   .contact .content .info {
     order: -1;
     text-align: center;
+  }
+  .contact .content form input[type="submit"] {
+    margin-right: auto;
   }
   }
   .contact .content .info h4 {
