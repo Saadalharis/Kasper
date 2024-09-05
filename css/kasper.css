@@ -132,18 +132,21 @@ ul {
   header nav ul {
     display: flex;
   }
+
   @media (max-width:767px){
     header nav ul {
         display: none;
-    }
-    header nav .toggle-menu:hover + ul {
-        display: flex;
-        flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 60%;
         left: 0;
         width: 100%;
         background-color: rgb(0 0 0 / 60%);
+        z-index: 10;
+    }
+    header nav .toggle-menu:hover + ul ,
+    ul:hover {
+        display: flex;
+        flex-direction: column;
     }
     header nav .toggle-menu:hover + ul li a {
         padding: 15px ;
@@ -151,7 +154,7 @@ ul {
   }
   header nav ul li a {
     color: white;
-    padding: 40px 10px;
+    padding: 30px 15px;
     display: block;
     font-size: 14px;
     text-decoration: none;
@@ -159,12 +162,10 @@ ul {
     position: relative;
     z-index: 3;
   }
-  header nav ul .active,
   header nav ul li a:hover {
-    content: "";
     color: var(--main-color);
     border-bottom: 1px solid var(--main-color);
-  }
+  }  
   header .container img {
     height: 40px;
   }
@@ -798,7 +799,6 @@ ul {
     margin: 20px auto;
     width: fit-content;
     text-decoration: none;
-    pointer-events: none;
   }
   .pricing .contact-text {
     font-size: 20px;
@@ -851,11 +851,13 @@ ul {
   }
   .subscribe form input[type="email"] {
     border: 1px solid white;
-    background-color: #74747d;
+    background: none;
     padding: 20px 20px 20px 60px;
     caret-color: var(--main-color);
     width: calc(100% - 130px);
     border-right: none;
+    color: #ffffff;
+    letter-spacing: 1px;
   }
   .subscribe form input[type="submit"] { 
     background-color: var(--main-color);
@@ -865,7 +867,7 @@ ul {
     border: 1px solid white;
     text-transform: uppercase;
     border-left: none;
-    pointer-events: none;
+    cursor: pointer;
   }
   .subscribe form i {
     position: absolute;
@@ -975,8 +977,8 @@ ul {
   /* end contact */
   /* start footer */
   .footer {
-    padding-top: calc(var(--section-padding ) /2);
-    padding-bottom: calc(var(--section-padding) /2);
+    padding-top: calc(var(--section-padding ) /3);
+    padding-bottom: 10px;
     background-image: url(../image/subscribe.jpg);
     background-size: cover;
     position: relative;
@@ -996,13 +998,13 @@ ul {
     position: relative;
   }
   .footer .container img {
-    margin-bottom: 20px;
+    margin-bottom:0;
   }
   .footer p:not(.copyright) {
     text-transform: uppercase;
     padding: 20px;
     border-bottom: 1px solid white;
-    margin: 20px auto;
+    margin: 0 auto;
     width: fit-content;
     font-size: 22px;
   }
@@ -1010,7 +1012,7 @@ ul {
     padding: 10px 15px;
   }
   .footer .copyright {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .footer .copyright span {
     color: var(--main-color);
